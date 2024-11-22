@@ -3,23 +3,23 @@ package org.ies.vehicles.model;
 import java.util.Objects;
 
 public class Vehicule {
-    private String vehiculeType;
+    private VehiculeType vehiculeType;
     private String color;
     private int maxSpeed;
     private String plate;
 
-    public Vehicule(String vehiculeType, String color, int maxSpeed, String plate) {
+    public Vehicule(VehiculeType vehiculeType, String color, int maxSpeed, String plate) {
         this.vehiculeType = vehiculeType;
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.plate = plate;
     }
 
-    public String getVehiculeType() {
+    public VehiculeType getVehiculeType() {
         return vehiculeType;
     }
 
-    public void setVehiculeType(String vehiculeType) {
+    public void setVehiculeType(VehiculeType vehiculeType) {
         this.vehiculeType = vehiculeType;
     }
 
