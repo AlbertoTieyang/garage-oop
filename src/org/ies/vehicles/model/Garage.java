@@ -6,12 +6,12 @@ import java.util.Objects;
 public class Garage {
     private String name;
     private String address;
-    private Vehicule[] vehicules;
+    private Vehicle[] vehicles;
 
-    public Garage(String name, String address, Vehicule[] vehicules) {
+    public Garage(String name, String address, Vehicle[] vehicles) {
         this.name = name;
         this.address = address;
-        this.vehicules = vehicules;
+        this.vehicles = vehicles;
     }
 
     public String getName() {
@@ -22,14 +22,6 @@ public class Garage {
         this.name = name;
     }
 
-    public Vehicule[] getVehicules() {
-        return vehicules;
-    }
-
-    public void setVehicules(Vehicule[] vehicules) {
-        this.vehicules = vehicules;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -38,17 +30,24 @@ public class Garage {
         this.address = address;
     }
 
+    public Vehicle[] getVehicles() {
+        return vehicles;
+    }
+
+    public void setVehicles(Vehicle[] vehicles) {
+        this.vehicles = vehicles;
+    }
+
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Garage garage = (Garage) o;
-        return Objects.equals(name, garage.name) && Objects.equals(address, garage.address) && Objects.deepEquals(vehicules, garage.vehicules);
+        return Objects.equals(name, garage.name) && Objects.equals(address, garage.address) && Objects.deepEquals(vehicles, garage.vehicles);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, address, Arrays.hashCode(vehicules));
+        return Objects.hash(name, address, Arrays.hashCode(vehicles));
     }
 
     @Override
@@ -56,8 +55,7 @@ public class Garage {
         return "Garage{" +
                 "name='" + name + '\'' +
                 ", address='" + address + '\'' +
-                ", vehicules=" + Arrays.toString(vehicules) +
+                ", vehicles=" + Arrays.toString(vehicles) +
                 '}';
     }
-
 }
